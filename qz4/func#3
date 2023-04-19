@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+char* copy_string(char* str) {
+    int len = strlen(str);
+    char* cp_str = (char*)calloc(len + 1, sizeof(char)); 
+    strcpy(cp_str, str); 
+    return cp_str;
+}
+
+int main() {
+    char* str = "IU!IU!IU!IU!";
+    char* cp_str = copy_string(str);
+
+    printf("copy string = %s\n", cp_str);
+
+    free(cp_str); 
+
+    return 0;
+}
